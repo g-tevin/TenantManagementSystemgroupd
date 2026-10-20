@@ -11,6 +11,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         binding.registerTextView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
@@ -20,8 +23,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)}
         }
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
 
         val registeredEmail = intent.getStringExtra("EMAIL")
         if (registeredEmail != null) {
