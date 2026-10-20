@@ -11,9 +11,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         binding.registerTextView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
@@ -22,7 +19,6 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.strathmore.edu"))
                 startActivity(intent)}
         }
-
 
 
         val registeredEmail = intent.getStringExtra("EMAIL")
